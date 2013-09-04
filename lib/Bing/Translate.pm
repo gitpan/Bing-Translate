@@ -103,13 +103,13 @@ Bing::Translate - Class for using the functions, provided by the Microsoft Bing 
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
   use Bing::Translate;
 
-  my $srcText = "胖達人昨起受理退費，各分店出現退費人潮，有人一口氣拿四十多張發票，可退一萬多元；有人拿著冰凍麵包退費，但業者說只能換新鮮麵包，不能退錢。";
+  my $srcText = "胖達人昨起受理退費";
   my $translator = Bing::Translate->new('Your client id', 'Your client secret'); 
   my $result = $translator->translate("$srcText", "zh-CHT", "en");
   print "$result\n";
@@ -117,14 +117,6 @@ version 0.002
 =head1 DESCRIPTION
 
 This is an implementation of the Microsoft Translator (Bing Translator) API.
-
-=head1 NAME
-
-Bing::Translate - Class for using the functions, provided by the Microsoft Bing Translate API.
-
-=head1 VERSION
-
-version 0.002
 
 =head1 CONSTRUCTORS 
 
@@ -158,17 +150,6 @@ The language code reference : http://msdn.microsoft.com/en-us/library/hh456380.a
 =head1 AUTHOR
 
 Meng-Jie Wang <taiwanwolf.iphone@gmail.com>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2013 by Meng-Jie Wang.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=head1 AUTHOR
-
-Meng-Jie Wang <taiwolf@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

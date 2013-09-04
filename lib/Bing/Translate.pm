@@ -103,11 +103,72 @@ Bing::Translate - Class for using the functions, provided by the Microsoft Bing 
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+  use Bing::Translate;
+
+  my $srcText = "胖達人昨起受理退費，各分店出現退費人潮，有人一口氣拿四十多張發票，可退一萬多元；有人拿著冰凍麵包退費，但業者說只能換新鮮麵包，不能退錢。";
+  my $translator = Bing::Translate->new('Your client id', 'Your client secret'); 
+  my $result = $translator->translate("$srcText", "zh-CHT", "en");
+  print "$result\n";
+
+=head1 DESCRIPTION
+
+This is an implementation of the Microsoft Translator (Bing Translator) API.
+
+=head1 NAME
+
+Bing::Translate - Class for using the functions, provided by the Microsoft Bing Translate API.
+
+=head1 VERSION
+
+version 0.002
+
+=head1 CONSTRUCTORS 
+
+=head2 new($client_id, $client_secret)
+
+This is the constructor.  Options are as follows:
+
+=over 4
+
+=item * Client ID (required)
+
+Your Application client ID on the Windows Azure Marketplace 
+
+=item * Client secret (required)
+
+Your Application client secret on the Windows Azure Marketplace
+
+=back
+
+If you don't know how to do this, you can see : http://blogs.msdn.com/b/translation/p/gettingstarted1.aspx
+
+=head1 METHODS
+
+=head2 translate("source text", "from language code", "to language code")
+
+  my $result = $translator->translate("$srcText", "zh-CHT", "en");
+
+This method reads source text and send to Bing translate server, it process the Access Token  then get the translated result.
+The language code reference : http://msdn.microsoft.com/en-us/library/hh456380.aspx
 
 =head1 AUTHOR
 
 Meng-Jie Wang <taiwanwolf.iphone@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Meng-Jie Wang.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=head1 AUTHOR
+
+Meng-Jie Wang <taiwolf@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
